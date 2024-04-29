@@ -33,3 +33,6 @@ const chatModel=mongoose.Schema(
 },{
     timestamps:true,
 });
+
+const Chat=mongoose.model("Chat",chatModel);
+export default Chat;
