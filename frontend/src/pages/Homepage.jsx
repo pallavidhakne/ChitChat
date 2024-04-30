@@ -9,6 +9,9 @@ import {
   Tabs,
   Text,
 } from "@chakra-ui/react";
+
+import Login from "../components/Login";
+import Signup from "../components/Signup";
 function Homepage() {
   return (
     <Container maxW="xl" centerContent>
@@ -29,31 +32,21 @@ function Homepage() {
       <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
         <Tabs variant="soft-rounded" colorScheme="green">
           <TabList>
-            <Tab>Tab 1</Tab>
-            <Tab>Tab 2</Tab>
+            <Tab width="50%">Login In</Tab>
+            <Tab width="50%">Sign Up</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>
-              <p>one!</p>
+              <Login />
             </TabPanel>
             <TabPanel>
-              <p>two!</p>
+              <Signup />
             </TabPanel>
           </TabPanels>
         </Tabs>
       </Box>
     </Container>
   );
-  {
-    /* <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
-      <Tabs isFitted variant="soft-rounded">
-        <TabList mb="1em">
-          <Tab>Login</Tab>
-          <Tab>Sign Up</Tab>
-        </TabList>
-      </Tabs>
-    </Box> */
-  }
 }
 
 export default Homepage;
