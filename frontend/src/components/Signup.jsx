@@ -10,7 +10,9 @@ import { useHistory } from "react-router";
 
 const Signup = () => {
   const [show, setShow] = useState(false);
+  const [cnfirmshow, setcnfirmshow] = useState(false);
   const handleClick = () => setShow(!show);
+  const confirmhandleClick = () => setcnfirmshow(!cnfirmshow);
 
   const [name, setName] = useState();
   const [email, setEmail] = useState();
@@ -62,13 +64,13 @@ const Signup = () => {
         <FormLabel>Confirm Password</FormLabel>
         <InputGroup size="md">
           <Input
-            type={show ? "text" : "password"}
+            type={cnfirmshow ? "text" : "password"}
             placeholder="Confirm password"
             onChange={(e) => setConfirmpassword(e.target.value)}
           />
           <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
-              {show ? "Hide" : "Show"}
+            <Button h="1.75rem" size="sm" onClick={confirmhandleClick}>
+              {cnfirmshow ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
         </InputGroup>
@@ -81,9 +83,7 @@ const Signup = () => {
           accept="image/*"
           onChange={(e) => postDetails(e.target.files[0])}
         />{" "}
-        */
-      </FormControl>
-      /*{" "}
+      </FormControl>{" "}
       <Button
         colorScheme="blue"
         width="100%"
