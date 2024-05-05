@@ -16,7 +16,7 @@ app.use(Express.json());
 
 // Define a basic route
 app.get("/", (req, res) => {
-  res.send("Hello Chichat");
+  res.send("Api is running successfully");
 });
 
 // Start the server
