@@ -3,6 +3,8 @@ const dotenv = require("dotenv");
 const connectToDatabase = require("./config/db");
 const colors = require("colors");
 
+const userRoutes = require("./routes/userRoutes");
+
 dotenv.config();
 
 const app = Express();
@@ -14,6 +16,8 @@ connectToDatabase();
 // Middleware to parse JSON bodies
 app.use(Express.json());
 
+//end points
+app.use("/api/user", userRoutes);
 // Define a basic route
 app.get("/", (req, res) => {
   res.send("Api is running successfully");
