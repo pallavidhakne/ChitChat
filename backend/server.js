@@ -2,7 +2,8 @@ const Express = require("express");
 const dotenv = require("dotenv");
 const connectToDatabase = require("./config/db");
 const colors = require("colors");
-
+const errorHandler = require("./middleware/errorMiddleware");
+const notFound = require("./middleware/authMiddleware");
 const userRoutes = require("./routes/userRoutes");
 
 dotenv.config();
@@ -22,6 +23,10 @@ app.use("/api/user", userRoutes);
 app.get("/", (req, res) => {
   res.send("Api is running successfully");
 });
+
+// Error Handling middlewares
+app.use(notFound);
+app.use(errorHandler);
 
 // Start the server
 app.listen(PORT, function () {
