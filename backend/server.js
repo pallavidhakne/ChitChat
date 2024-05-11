@@ -2,8 +2,7 @@ const Express = require("express");
 const dotenv = require("dotenv");
 const connectToDatabase = require("./config/db");
 const colors = require("colors");
-const errorHandler = require("./middleware/errorMiddleware");
-const notFound = require("./middleware/authMiddleware");
+const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const userRoutes = require("./routes/userRoutes");
 
 dotenv.config();
